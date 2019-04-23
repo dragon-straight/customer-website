@@ -1,0 +1,84 @@
+<div class="header-area">
+    {{> header-area}}
+</div> <!-- End header area -->
+
+<div class="site-branding-area">
+    {{>site-branding-area}}
+</div> <!-- End site branding area -->
+
+<div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 50px;">
+    {{>mainmenu}}
+</div>
+
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>{{pageTitle}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page content -->
+<div class="row content">
+    <div class="panel-body">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="list" style="height: 300px;overflow: auto;">
+                <table class="table table-striped table-bordered table-list" id="ta1">
+                    <thead>
+                    <tr>
+                        <th>Đơn hàng</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Nhà sản xuất</th>
+                        <th>Số lượng</th>
+                        <th>Ngày đặt hàng</th>
+                        <th>Địa chỉ</th>
+                        <th>Giá tiền</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>ABC123</td>
+                        <td>Iphone X</td>
+                        <td>Apple</td>
+                        <td>1</td>
+                        <td>20/04/2019</td>
+                        <td>Q6, TPHCM</td>
+                        <td>15.000.000 VND</td>
+                        <td style="background-color: red">Đang giao</td>
+                    </tr>
+                    <tr>
+                        <td>DEF456</td>
+                        <td>Sony Smart TV 2015</td>
+                        <td>Sony</td>
+                        <td>2</td>
+                        <td>19/04/2019</td>
+                        <td>Q8, TPHCM</td>
+                        <td>150.000.000 VND</td>
+                        <td style="background-color: aqua">Đã giao</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End page content -->
+
+
+<div class="footer-top-area">
+    {{>footer-top}}
+</div> <!-- End footer top area -->
+
+<div class="footer-bottom-area">
+    {{>footer-bot}}
+</div> <!-- End footer bottom area -->
+
+
+
+
+
