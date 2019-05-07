@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('express-handlebars');
 //const http = require('http');
-//const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 const homeRouter = require('./routes/home');
 const catalogRouter = require('./routes/catalog');
@@ -47,6 +47,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.listen(port, function(){
+  console.log('Server is running');
 });
 
 module.exports = app;
