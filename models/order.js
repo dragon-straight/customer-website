@@ -19,7 +19,8 @@ const orderSchema = new Schema({
             price: Number,
             quantity: Number
         }
-    ]
+    ],
+    isDeleted: Boolean
 });
 
 const Order = mongoose.model('Order', orderSchema);

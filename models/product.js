@@ -18,7 +18,12 @@ const productSchema = new Schema({
     img: String,
     price: {type: Number, min: 0},
     status: Boolean,
-    info: String
+    info: String,
+    isDeleted: Boolean,
+    releaseDate: {type: Date},
+    viewed: {type: Number, default: 0},
+    sale: {type: Number, default: 0}
+
 });
 
 const Product = mongoose.model('Product', productSchema);

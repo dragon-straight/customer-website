@@ -4,13 +4,7 @@ const bcrypt = require('bcrypt');
 
 const adminSchema = new Schema({
     username: String,
-    password: String,
-    info: {
-        name: String,
-        sdt: String,
-        email: String,
-    }
-
+    password: String
 });
 
 //hash the password

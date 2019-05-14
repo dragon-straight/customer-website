@@ -1,5 +1,5 @@
 const Customer = require('../models/customer');
-
+const productDao = require('../models/dao/productDao');
 exports.register_index = function(req, res){
     res.render('customer/register', { pageTitle: 'Đăng ký' });
 };
@@ -13,11 +13,31 @@ exports.forgotPassword_index = function(req, res){
 };
 
 exports.customer_viewOrders = function(req, res) {
-    res.render('customer/orders', { pageTitle: 'Lịch sử và trạng thái mua hàng' });
+      productDao.get_Manufacturer().then(result => {
+        manufacturer = result;
+        return productDao.get_Category();
+    }).then(result => {
+          category = result;
+          res.render('customer/orders', {
+              pageTitle: 'Lịch sử và trạng thái mua hàng',
+              manufacturerList: manufacturer,
+              categoryList: category,
+          });
+      });
 };
 
 exports.checkout_index = function(req, res){
-    res.render('customer/checkout', { pageTitle: 'Thanh toán' });
+    productDao.get_Manufacturer().then(result => {
+        manufacturer = result;
+        return productDao.get_Category();
+    }).then(result => {
+        category = result;
+        res.render('customer/checkout', {
+            pageTitle: 'Thanh toán',
+            manufacturerList: manufacturer,
+            categoryList: category,
+        });
+    });
 };
 
 exports.userInfoUpdate_index = function(req, res){

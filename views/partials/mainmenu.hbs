@@ -13,8 +13,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="./">Trang chủ</a></li>
-                    <li><a href="/list">Danh sách sản phẩm</a></li>
-                    <li><a href="/single-product">Chi tiết sản phẩm</a></li>
                     <li><a href="/cart">Giỏ hàng</a></li>
                     <li><a href="/checkout">Thanh toán</a></li>
                     <li class="dropdown">
@@ -23,16 +21,18 @@
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#">Theo loại </a>
                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="/list">Android</a></li>
-                                    <li><a tabindex="-1" href="/list">IOS</a></li>
+                                    {{#each categoryList}}
+                                        <li><a tabindex="-1" href="{{categoryPage this._id}}">{{this.name}}</a></li>
+                                    {{/each}}
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#">Theo nhà sản xuất</a>
                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="/list">Apple</a></li>
-                                    <li><a tabindex="-1" href="/list">Samsung</a></li>
-                                    <li><a tabindex="-1" href="/list">Oppo</a></li>
+                                    {{#each manufacturerList}}
+                                    <li>
+                                    <a tabindex="-1" href={{manufacturerPage this._id}}>{{this.name}}</a></li>
+                                    {{/each}}
                                 </ul>
                             </li>
                         </ul>

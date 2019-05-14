@@ -245,12 +245,9 @@ z-index: 999;}
 .block-slider .caption-group .title{
 	margin: 0;
 }
-.block-slider .caption-group .subtitle{
-	margin: 0;
-	margin-top: 5px;
-}
+
 .block-slider .caption-group .button-radius{
-	margin-top: 27px;
+	margin-top: 275px;
 }
 .block-slider .caption-group .primary{
 	color: #1bd172;
@@ -444,8 +441,8 @@ z-index: 999;}
   overflow: hidden;
 }
 .single-product:hover {}
-.single-product:hover .product-hover a.add-to-cart-link {top: 32%;}
-.single-product:hover .product-hover a.view-details-link {bottom: 32%;}
+.single-product:hover .product-hover a.add-to-cart-link {top: 20%;}
+.single-product:hover .product-hover a.view-details-link {bottom: 20%;}
 .single-product:hover .product-hover:after{left: 0}
 
 
@@ -466,7 +463,9 @@ z-index: 999;}
   padding: 1px 10px;
 }
 .latest-product .owl-nav div:hover, .brand-wrapper .owl-nav div:hover, .related-products-wrapper .owl-nav div:hover {color: #FFF; background:#f95f5f;}
-.brand-list {padding-top: 40px;}
+.brand-list {
+    padding-top: 40px;
+}
 .brand-list .owl-nav {
   position: absolute;
   right: 0;
@@ -509,7 +508,7 @@ z-index: 999;}
     width: 100px;
 }
 .single-wid-product h2 {
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 12px;
 }
 .product-wid-rating {
@@ -521,6 +520,7 @@ z-index: 999;}
     font-weight: 700;
     margin-right: 10px;
     text-decoration: none;
+    font-size: 18px;
 }
 .single-wid-product h2 a {
     color: #222;
@@ -580,8 +580,8 @@ padding: 35px 0 180px;}
 
 
 .footer-social a {
-  background: none repeat scroll 0 0 #5a88ca;
-  color: #fff;
+  background: none repeat scroll 0 0;
+  color: #5a88ca;
   display: inline-block;
   font-size: 20px;
   height: 40px;
@@ -1177,3 +1177,18 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     -moz-border-radius:6px 0 6px 6px;
     border-radius:6px 0 6px 6px;
 }
+
+#slider img{
+    height: 500px;
+    width: 1200px;
+}
+
+.block-slider .title{
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 10px;
+}
+

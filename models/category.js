@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    name: String
+    name: String,
+    isDeleted: Boolean
 });
 
 const Category = mongoose.model('Category', categorySchema);
