@@ -7,19 +7,29 @@ const Order = require('../order');
 const Admin = require('../admin');
 
 //Get product list by manufacturer id
-exports.get_Product_By_Manufacturer = id =>{
-    let product = Manufacturer.find({_id: id, isDeleted: false}).then(manufacturerObject => {
+exports.get_Product_By_Manufacturer = async id =>{
+
+    /*let product = Manufacturer.find({_id: id, isDeleted: false}).then(manufacturerObject => {
        return Product.find({manufacturer: manufacturerObject, isDeleted: false}, '_id name img price');
     });
-    return product;
+    return product;*/
+
+    const manufacturerObject = await Manufacturer.find({_id: id, isDeleted: false});
+
+    return Product.find({manufacturer: manufacturerObject, isDeleted: false}, '_id name img price');
 };
 
 //Get product list by category id
-exports.get_Product_By_Category = id =>{
-    let product = Category.find({_id: id, isDeleted: false}).then(categoryObject => {
+exports.get_Product_By_Category = async id =>{
+
+    /*let product = Category.find({_id: id, isDeleted: false}).then(categoryObject => {
         return Product.find({category: categoryObject, isDeleted: false}, '_id name img price');
     });
-    return product;
+    return product;*/
+
+    const categoryObject = await Category.find({_id: id, isDeleted: false});
+
+    return Product.find({category: categoryObject, isDeleted: false}, '_id name img price');
 };
 
 
@@ -38,12 +48,17 @@ function getRandom(min, max){
 };
 
 //Slider
-exports.get_Random_Product = () =>{
-    let product = Product.countDocuments({}).then(count => {
+exports.get_Random_Product = async () =>{
+    /*let product = Product.countDocuments().then(count => {
             const skipRecord = getRandom(count - 7, count - 2);
             return Product.find({isDeleted: false}, '_id name price img').skip(skipRecord);
         });
-    return product;
+    return product;*/
+
+    const count = await Product.countDocuments();
+    const skipRecord = await getRandom(count - 7, count - 2);
+
+    return  Product.find({isDeleted: false}, '_id name price img').skip(skipRecord);
 };
 
 //get 7 Latest Product
@@ -68,7 +83,6 @@ exports.get_Product_By_Id = id => {
 
 //Get related product
 exports.get_Related_Products =  manufacturerObject =>{
-    console.log(manufacturerObject);
   return Product.find({manufacturer: manufacturerObject, isDeleted: false}, '_id name img price');
 };
 

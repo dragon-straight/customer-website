@@ -5,11 +5,11 @@ const bcrypt = require('bcrypt');
 const customerSchema = new Schema({
     username: String,
     password: String,
+    email: String,
     info: {
         name: String,
         address: String,
-        sdt: String,
-        email: String,
+        sdt: String
     },
 
 });

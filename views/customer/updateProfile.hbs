@@ -22,56 +22,30 @@
 <body class="bg-light" style="zoom: 150%">
 
 <div class="container">
-    <div class="card card-register mx-auto mt-5">
-        <div class="card-header">{{pageTitle}}</div>
-        <div class="card-body">
-            {{#if errorMessage}}
-            <div class="alert alert-danger" role="alert">
-                {{errorMessage}}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {{/if}}
+    <div class="row">
+        <div class="card card-register mx-auto mt-5">
+        <div class="card-header">
+            {{pageTitle}}
+        </div>
+        <div class="card-body" >
+
             <form method="post">
                 <div class="form-group">
                     <div class="form-row">
-                        <div class="col-md-6">
-                            <h6>Tài khoản:</h6>
-                            <div class="form-label-group">
-                                <input type="text" name="username" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
-                            </div>
-                        </div>
-
                         <div class="col-md-6">
                             <h6>Họ và tên:</h6>
                             <div class="form-label-group">
                                 <input type="text" name="name" class="form-control" placeholder="Last name" required="required">
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-row">
                         <div class="col-md-6">
-                            <h6>Mật khẩu:</h6>
+                            <h6>Địa chỉ:</h6>
                             <div class="form-label-group">
-                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h6>Xác nhận mật khẩu:</h6>
-                            <div class="form-label-group">
-                                <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
+                                <input type="text" name="address" class="form-control" placeholder="Email address" required="required">
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <h6>Địa chỉ:</h6>
-                    <div class="form-label-group">
-                        <input type="text" name="address" class="form-control" placeholder="Email address" required="required">
-                    </div>
+
                 </div>
                 <div class="form-group">
                     <div class="form-row">
@@ -89,14 +63,16 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>
+                <button type="submit" class="btn btn-primary btn-block">Xác nhận</button>
             </form>
             <div class="text-center">
                 <a class="d-block small mt-3" href="login">Đăng nhập</a>
                 <a class="d-block small" href="forgotPassword">Quên mật khẩu?</a>
             </div>
         </div>
+        </div>
     </div>
+
 </div>
 
 <!-- Bootstrap core JavaScript-->
