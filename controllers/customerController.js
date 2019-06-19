@@ -162,7 +162,7 @@ exports.checkoutCOD_post = function(req,res,){
     });
 };
 
-exports.thank_you = function(req,res)
+exports.thank_you = function(req,res){
     const manufacturer = productDao.get_Manufacturer();
     const category = productDao.get_Category();
     var successMsg = req.flash('success')[0];
