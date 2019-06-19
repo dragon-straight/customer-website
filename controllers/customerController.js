@@ -24,8 +24,8 @@ exports.customer_orders = async function(req, res) {
     if(orders){
         res.render('customer/orders', {
             pageTitle: 'Các đơn hàng',
-            manufacturerList: manufacturer,
-            categoryList: category,
+            manufacturerList: await manufacturer,
+            categoryList: await category,
             curCustomer: req.user,
             orders: orders
         });
