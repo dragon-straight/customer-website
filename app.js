@@ -11,7 +11,7 @@ const passport = require('passport');
 const jquery = require('jquery');
 const MongoStore = require('connect-mongo')(session);
 //const http = require('http');
-//const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
@@ -87,4 +87,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen(port, function(){
+  console.log('Server is running');
+});
 module.exports = app;
