@@ -13,18 +13,20 @@
 </div>
 
 <!-- Slider -->
-<div class="slider-area">
+<div class="slider-area" style="margin-top: 15px">
     <div class="block-slider block-slider4">
         <ul class="" id="bxslider-home4">
             {{#each randomProduct}}
             <li id="slider">
-                <img src = {{this.img}} alt="Slide">
+                <img src = "{{this.img1}}" alt="Slide">
                 <h2 class="caption title">
                     {{this.name}}
                     {{formatCurrency this.price}}
                 </h2>
                 <div class="caption-group">
-                    <a href={{productPage this._id}} class="caption button-radius" href=><span class="icon"></span>Xem ngay</a>
+                    <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                        <a class="caption button-radius" onclick="this.parentElement.submit()" style="color: black"><span class="icon"></span>Xem ngay</a>
+                    </form>
                 </div>
             </li>
             {{/each}}
@@ -76,14 +78,19 @@
                         {{#each topLatest}}
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src= {{this.img}} alt="">
+                                <img src= {{this.img1}} alt="">
                                 <div class="product-hover">
-                                    <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
-                                    <a href={{productPage this._id}} class="view-details-link"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                    <form action="/cart/add/{{this.id}}" method="post">
+                                        <a onclick="this.parentElement.submit()" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
+                                    </form>
+                                    <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                        <a class="view-details-link" onclick="this.parentElement.submit()" style="color: white"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                    </form>
                                 </div>
                             </div>
-
-                            <h2><a href={{productPage this._id}}>{{this.name}}</a></h2>
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><h2>{{this.name}}</h2></a>
+                            </form>
 
                             <div class="product-carousel-price">
                                 <ins>{{formatCurrency this.price}}</ins>
@@ -126,8 +133,12 @@
                     <a href="" class="wid-view-more">Xem tất cả</a>
                     {{#each mostSold}}
                         <div class="single-wid-product">
-                            <a href={{productPage this._id}}><img src={{this.img}} alt="" class="product-thumb"></a>
-                            <h2><a href={{productPage this._id}}>{{this.name}}</a></h2>
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><img src={{this.img1}} alt="" class="product-thumb"></a>
+                            </form>
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><h2>{{this.name}}</h2></a>
+                            </form>
                             <div class="product-wid-price">
                                 <ins>{{formatCurrency this.price}}</ins>
                             </div>
@@ -141,8 +152,12 @@
                     <a href="#" class="wid-view-more">Xem tất cả</a>
                     {{#each mostViewed}}
                         <div class="single-wid-product">
-                            <a href={{productPage this._id}}><img src={{this.img}} alt="" class="product-thumb"></a>
-                            <h2><a href={{productPage this._id}}>{{this.name}}</a></h2>
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><img src={{this.img1}} alt="" class="product-thumb"></a>
+                            </form>
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><h2>{{this.name}}</h2></a>
+                            </form>
                             <div class="product-wid-price">
                                 <ins>{{formatCurrency this.price}}</ins>
                             </div>

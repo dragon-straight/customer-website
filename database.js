@@ -7,6 +7,8 @@ const Manufacturer = require('./models/manufacturer');
 const Customer = require('./models/customer');
 const Order = require('./models/order');
 const Admin = require('./models/admin');
+const Comment = require('./models/comment');
+
 const productDao = require('./models/dao/productDao');
 
 mongoose.connect(mongoDB, function(error){
@@ -119,6 +121,7 @@ mongoose.connect(mongoDB, function(error){
     mvcProduct.save(function (error) {
         if(error) throw error;
     });
+
 
     mvcProduct = new Product({
         _id: new mongoose.Types.ObjectId(),
@@ -367,7 +370,7 @@ mongoose.connect(mongoDB, function(error){
 
     const mvcAdmin = new Admin({
         email: 'abc@gmail.com',
-        password: '123',
+        password: '123456',
         info:{
             name: 'boss',
             address: 'NVC',
@@ -431,6 +434,8 @@ mongoose.connect(mongoDB, function(error){
         if(error) throw error;
         console.log('Order successfully saved');
     });
+
+    
 });
 
 

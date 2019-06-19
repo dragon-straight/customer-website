@@ -14,14 +14,14 @@ const adminSchema = new Schema({
 });
 
 //hash the password
-//adminSchema.methods.generateHash = function(password){
-   // return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-//};
+adminSchema.methods.generateHash = function(password){
+   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
 
 //checking if password is valid
-//adminSchema.methods.validPassword = function (password){
-  //  return bcrypt.compareSync(password,this.password);
-//};
+adminSchema.methods.validPassword = function (password){
+   return bcrypt.compareSync(password,this.password);
+};
 
 const Admin =  mongoose.model('Admin', adminSchema);
 
