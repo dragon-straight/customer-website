@@ -15,15 +15,17 @@ const productSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category'
     },
-    img: String,
+    img1: String,
+    img2: String,
+    img3: String,
     price: {type: Number, min: 0},
     status: Boolean,
     info: String,
     isDeleted: Boolean,
     releaseDate: {type: Date},
     viewed: {type: Number, default: 0},
-    sale: {type: Number, default: 0}
-
+    sale: {type: Number, default: 0},
+    size: {type: Number, default: 0}//44 -> 36
 });
 
 const Product = mongoose.model('Product', productSchema);
