@@ -8,10 +8,9 @@ const hbsHelpers = require('./handlebarsHelper');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
-const jquery = require('jquery');
 const MongoStore = require('connect-mongo')(session);
 //const http = require('http');
-//const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
@@ -46,16 +45,19 @@ app.use(express.static(path.join(__dirname, '/public')));
 //express session
 app.use(session({
   secret:'mysupersecret',
-  resave: true,
-  saveUninitialized: true,
+  resave: false,
+  saveUninitialized: false,
   store: new MongoStore({mongooseConnection: mongoose.connection}),
-  cookie:{maxAge: 300*1000}
+  cookie:{maxAge: 180*60*1000}
 }));
 //connect flash
 app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+
 
 app.use((req,res,next)=>{
   res.locals.success_msg=req.flash('success_msg');
@@ -85,6 +87,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.listen(port, function(){
+    console.log('Server is running');
 });
 
 module.exports = app;

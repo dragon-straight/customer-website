@@ -1,55 +1,36 @@
 const express = require('express');
 const Product = require('../models/product');
-const router = express.Router() ;
+const router = express.Router();
 const async = require('async');
 
 //Require controller modules
-const productController = require('../controllers/productController');
+const product_Controller = require('../controllers/productController');
 
-//GET poroduct list page
-router.get('/productList', productController.product_viewProductList_dec);
-router.get('/productList/asc', productController.product_viewProductList_asc);
 //GET product list page by Manufacturer
-router.get('/manufacturer/:id', productController.product_viewByManufacturer_dec);
-router.get('/manufacturer/asc/:id', productController.product_viewByManufacturer_asc);
+router.get('/manufacturer/:id', product_Controller.product_viewByManufacturer);
+
 //GET product list page by Category
-router.get('/category/:id', productController.product_viewByCategory_dec);
-router.get('/category/asc/:id', productController.product_viewByCategory_asc);
+router.get('/category/:id', product_Controller.product_viewByCategory);
+
+// GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
+router.get('/create', product_Controller.product_create_get);
 
 //GET view product page
-router.get('/single-product/:id',productController.product_viewProduct);
-router.post('/incView/:id',productController.product_incView);
-router.post('/single-product/:id',productController.product_comment_post);
+router.get('/single-product/:id',product_Controller.product_viewProduct);
 
-//GET result-search page
-router.get('/result-search', productController.product_search);
+//GET forgot password page
+router.get('/result-search', product_Controller.product_search);
 
 //GET cart page
-router.get('/cart', productController.product_cart);
+router.get('/cart', product_Controller.product_cart);
 
 //GET add product to cart
-router.post('/cart/add/:id', productController.product_addToCart);
-
-//GET reduce product qty in cart
-//router.get('/cart/reduce/:id', productController.product_reduceInCart);
+router.get('/cart/add', product_Controller.product_addToCart);
 
 //GET remove product from cart
-router.post('/cart/remove/:id', productController.product_removeFromCart);
+router.get('/cart/remove', product_Controller.product_removeFromCart);
 
+//GET change quantity of cart
+router.get('/cart/change', product_Controller.product_changeQuantity);
 
 module.exports = router;
-
-function isLoggedIn(req,res,next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    req.flash('error', 'Xin hãy đăng nhập !!');
-    res.redirect('/login');
-}
-
-function notLoggedIn(req,res,next){
-    if(!req.isAuthenticated()){
-        return next();
-    }
-    res.redirect('/');
-}

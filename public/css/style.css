@@ -21,22 +21,20 @@ img {
 h1,
 h2,
 h3,
-h4{
-    font-weight: bold;
-}
+h4,
 h5,
 h6 {
     margin: 0 0 15px;
 }
-body { font-family:Roboto Condensed, Helvetica, sans-serif; }
+body { font-family:Arial, Helvetica, sans-serif; }
 
 
 
 .header-area {
-    background: none repeat scroll 0 0 #dbdddf;
+    background: none repeat scroll 0 0 #f4f4f4;
 }
 .header-area a {
-    color: #5a88ca;
+    color: #888;
 }
 .user-menu ul {
     list-style: outside none none;
@@ -344,7 +342,7 @@ z-index: 999;}
 .brands-area {
   border-top:1px solid #e5e5e5;
   border-bottom:1px solid #e5e5e5;
-  color: #222;
+  color: #fff;
   padding: 20px 0 20px;
 }
 
@@ -365,12 +363,11 @@ z-index: 999;}
 .promo3 { background:#fa8072;}
 .promo4 { background:#4abebd;}
 .section-title {
-  font-family: "Roboto Condensed",sans-serif;
+  font-family: "Raleway",sans-serif;
   font-size: 50px;
-  font-weight: 400;
+  font-weight: 100;
   margin-bottom: 50px;
   text-align: center;
-  color: #5a88ca
 }
 
 
@@ -459,13 +456,13 @@ z-index: 999;}
 }
 
 .latest-product .owl-nav div, .related-products-wrapper .owl-nav div {
-  background:#222;
+  background:#fa8072;
   color:#FFF;
   display: inline-block;
   margin-left: 15px;
   padding: 1px 10px;
 }
-.latest-product .owl-nav div:hover, .brand-wrapper .owl-nav div:hover, .related-products-wrapper .owl-nav div:hover {color: #FFF; background:#222;}
+.latest-product .owl-nav div:hover, .brand-wrapper .owl-nav div:hover, .related-products-wrapper .owl-nav div:hover {color: #FFF; background:#f95f5f;}
 .brand-list {
     padding-top: 40px;
 }
@@ -476,14 +473,14 @@ z-index: 999;}
 }
 .brand-wrapper .owl-nav div {
   border: 1px solid #fff;
-  color: #222;
+  color: #fff;
   display: inline-block;
   margin-left: 15px;
   padding: 1px 10px;
 }
 
 .brand-wrapper .owl-nav div {
-  background:#222;
+  background:#fa8072;
   color:#FFF;
   display: inline-block;
   margin-left: 15px;
@@ -493,11 +490,10 @@ z-index: 999;}
 .maincontent-area {padding-bottom: 50px; padding-top:20px;}
 
 .product-wid-title {
-  font-family: Roboto Condensed;
+  font-family: raleway;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 100;
   margin-bottom: 40px;
-  color:#5a88ca;
 }
 
 
@@ -533,8 +529,7 @@ z-index: 999;}
     color: #5a88ca;
 }
 .wid-view-more {
-    border-radius: 10px;
-    background: none repeat scroll 0 0 #222;
+    background: none repeat scroll 0 0 #5a88ca;
     color: #fff;
     padding: 3px 15px;
     position: absolute;
@@ -561,7 +556,7 @@ padding: 35px 0 180px;}
   color: #5a88ca;
 }
 .footer-wid-title {
-  font-family: Roboto Condensed;
+  font-family: raleway;
   font-size: 30px;
   font-weight: 100;color: #fff
 }
@@ -686,7 +681,7 @@ width: 10px;
 .product-big-title-area {background: url(img/crossword.png) repeat scroll 0 0 #5a88ca}
 
 .product-bit-title h2 {
-  font-family: Roboto Condensed;
+  font-family: raleway;
   font-size: 50px;
   font-weight: 200;
   margin: 0;
@@ -696,7 +691,7 @@ width: 10px;
 .single-product-area .zigzag-bottom {background-color: #f4f4f4}
 
 .single-product-area {
-  padding: 20px 70px;
+  padding: 80px 0 130px;
 }
 
 
@@ -717,7 +712,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
     padding: 10px;
 }
 input[type="submit"], button[type=submit] {
-    background: none repeat scroll 0 0#007bff;
+    background: none repeat scroll 0 0 #5a88ca;
     border: medium none;
     color: #fff;
     padding: 11px 20px;
@@ -1191,31 +1186,9 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .block-slider .title{
     display: flex;
     justify-content: center;
-    color:#5a88ca;
+    color: red;
     font-weight: 700;
     text-decoration: none;
     margin-top: 10px;
 }
 
-.media .media-object { max-width: 120px; }
-.media-body { position: relative; }
-.media-date { 
-    position: absolute; 
-    right: 15px;
-    top: 15px;
-}
-.media-date li { padding: 0; }
-.media-date li:first-child:before { content: ''; }
-.media-date li:before { 
-    content: '.'; 
-    margin-left: -2px; 
-    margin-right: 2px;
-}
-.media-comment { margin-bottom: 10px; }
-.media-replied { margin: 0 0 20px 50px; }
-.media-replied .media-heading { padding-left: 6px; }
-
-.pager li.active > a, .pager li.active > span{
-    background-color:#222;
-    pointer-events:none;
-  }

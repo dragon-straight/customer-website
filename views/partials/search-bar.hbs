@@ -1,5 +1,5 @@
 <div class="search-bar">
-    <form class="form-inline row" action="/result-search" method="get">
+    <form class="form-inline row" action="/product/search">
         <div class="form-group">
             <input name="name" type="text" class="form-control search-input" id="searchName" placeholder="Nhập tên sản phẩm">
         </div>
@@ -16,19 +16,18 @@
         </div>
 
         <div class="form-group">
-            <select name="category" class="form-control search-input" id="searchType">
+            <select name="type" class="form-control search-input" id="searchType">
                 <option value='' selected>Chọn loại</option>
-                {{#each categoryList}}
-                    <option value="{{this._id}}">{{this.name}}</option>
-                {{/each}}
+                <option value="IC">IOS</option>
+                <option value="TF">Android</option>
             </select>
         </div>
         <div class="form-group">
-            <select name="manufacturer" class="form-control search-input" id="searchBrand">
+            <select name="brand" class="form-control search-input" id="searchBrand">
                 <option value='' selected>Chọn NSX</option>
-                {{#each manufacturerList}}
-                    <option value="{{this._id}}">{{this.name}}</option>
-                {{/each}}
+                <option value="Adidas">Apple</option>
+                <option value="Nike">Samsung</option>
+                <option value="Pan">Oppo</option>
             </select>
         </div>
         <span>
