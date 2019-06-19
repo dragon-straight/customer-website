@@ -22,7 +22,7 @@ exports.product_viewProductList_dec = async function(req, res) {
     const pageStart = page;
     const prev=page-1 >0?page-1:1;
     const next=page+1;
-    const limit = 3;
+    const limit = 6;
     const offset = (page - 1) * limit;
 
     const products = Product.find({isDeleted: false}).limit(limit).skip(offset).sort({price: -1});

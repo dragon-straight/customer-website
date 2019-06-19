@@ -235,7 +235,7 @@ exports.customer_register_post = async function(req, res){
             Cám ơn vì đã tạo tài khoản.
             Tên đăng nhập của bạn là: ${customer.username}       
             Vui lòng xác thực email bằng cách nhập đoạn mã:  ${secretToken}
-            Vào trang: http://localhost:3000/verify
+            Vào trang: https://website-customer.herokuapp.com/verify
             Chúc một ngày tốt lành.`;
             sendMail(customer.email,'Verify',html,function(err,data){
                 if (err) throw err;
@@ -315,7 +315,7 @@ exports.customer_resetPassword = async function(req, res) {
             if (err) throw err
             else{ const html=`Chào bạn,   
             Tên đăng nhập của bạn là: ${customer.username}       
-            Vui lòng vào trang: http://localhost:3000/resetPassword/${resetToken} để cài đặt lại password mới
+            Vui lòng vào trang: http://website-customer.herokuapp.com/resetPassword/${resetToken} để cài đặt lại password mới
             Chúc một ngày tốt lành.`
             sendMail(customer.email,'Reset mật khẩu',html,function(err,data){
                 if (err) throw err;

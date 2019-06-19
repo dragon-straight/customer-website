@@ -78,11 +78,8 @@
                         {{#each topLatest}}
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src= {{this.img1}} alt="">
+                                <img src= {{this.img1}} style="width:220px; height:220px" alt="">
                                 <div class="product-hover">
-                                    <form action="/cart/add/{{this.id}}" method="post">
-                                        <a onclick="this.parentElement.submit()" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</a>
-                                    </form>
                                     <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
                                         <a class="view-details-link" onclick="this.parentElement.submit()" style="color: white"><i class="fa fa-link"></i> Xem chi tiết</a>
                                     </form>

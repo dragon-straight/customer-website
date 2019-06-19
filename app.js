@@ -87,7 +87,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(port, function(){
-  console.log('Server is running');
-});
+app.listen(port);
+
 module.exports = app;
